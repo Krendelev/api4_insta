@@ -31,9 +31,7 @@ def get_pictures(dir_name, collection):
 if __name__ == "__main__":
     dir_name = "images"
     collection = "wallpaper"
-    try:
-        os.mkdir(dir_name)
-    except FileExistsError:
-        pass
+
+    os.makedirs(dir_name, exist_ok=True)
 
     get_pictures(dir_name, collection)

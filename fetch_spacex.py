@@ -21,9 +21,7 @@ def get_pictures(dir_name, launch):
 if __name__ == "__main__":
     dir_name = "images"
     launch = "latest"
-    try:
-        os.mkdir(dir_name)
-    except FileExistsError:
-        pass
+
+    os.makedirs(dir_name, exist_ok=True)
 
     get_pictures(dir_name, launch)
